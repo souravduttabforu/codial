@@ -6,4 +6,5 @@ router.get('/profile',userController.profile);
 router.get('/codial-sign-in',userController.signIn);
 router.get('/codial-sign-up',userController.sighUp);
 
+router.post('/create',userController.create);
 module.exports = router;
