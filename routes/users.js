@@ -7,6 +7,7 @@ const userController = require('../controllers/users_controller');
 router.get('/profile',passport.checkAuthentication,userController.profile);
 router.get('/codial-sign-in',userController.signIn);
 router.get('/codial-sign-up',userController.sighUp);
+router.get('/codial-sign-out',userController.destroySession);
 
 router.post('/create',userController.create);
 router.post('/create-session',passport.authenticate(
