@@ -10,17 +10,17 @@ const passport = require("passport");
 const passoprtLocal = require("./config/passport-local-strategy");
 const MongoStore = require("connect-mongo");
 const mongoStore = require("connect-mongo");
-const sassMiddleware = require('node-sass-middleware');
+const sassMiddleware = require("node-sass-middleware");
 
-
-app.use(sassMiddleware({
-  src: './assets/scss',
-  dest:'./assets/css',
-  debug: true,
-  outputStyle: 'extended',
-  prefix: '/css'
-}))
-
+app.use(
+  sassMiddleware({
+    src: "./assets/scss",
+    dest: "./assets/css",
+    debug: true,
+    outputStyle: "extended",
+    prefix: "/css",
+  })
+);
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -43,7 +43,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     cookie: {
-      maxAge: (1000 * 60 * 100),
+      maxAge: 1000 * 60 * 100,
     },
     store: mongoStore.create({
       mongoUrl: "mongodb://127.0.0.1:27017/codial_dev",
